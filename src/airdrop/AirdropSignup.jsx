@@ -23,34 +23,34 @@ export default function Signup() {
   const navigate = useNavigate();
 
   // Check authentication status on component mount
-  useEffect(() => {
-    const checkAuthStatus = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/api/auth/status', {
-          method: 'GET',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+  // useEffect(() => {
+  //   const checkAuthStatus = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:3000/api/auth/status', {
+  //         method: 'GET',
+  //         credentials: 'include',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       });
         
-        const result = await response.json();
-        setAuthStatus(result);
-        console.log('Current authentication status:', result);
+  //       const result = await response.json();
+  //       setAuthStatus(result);
+  //       console.log('Current authentication status:', result);
         
-        // If user is already authenticated, redirect to dashboard
-        if (result.isAuthenticated) {
-          console.log('User is already authenticated, redirecting to dashboard');
-          navigate('/dashboard', { replace: true });
-        }
-      } catch (error) {
-        console.error('Error checking authentication status:', error);
-        setAuthStatus({ user: null, isAuthenticated: false });
-      }
-    };
+  //       // If user is already authenticated, redirect to dashboard
+  //       if (result.isAuthenticated) {
+  //         console.log('User is already authenticated, redirecting to dashboard');
+  //         navigate('/dashboard', { replace: true });
+  //       }
+  //     } catch (error) {
+  //       console.error('Error checking authentication status:', error);
+  //       setAuthStatus({ user: null, isAuthenticated: false });
+  //     }
+  //   };
 
-    checkAuthStatus();
-  }, [getUser, navigate]);
+  //   checkAuthStatus();
+  // }, [getUser, navigate]);
 
   // Form Configuration
   const formFields = [
