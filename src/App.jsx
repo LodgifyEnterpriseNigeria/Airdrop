@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AirdropHome from './airdrop/AirdropHome.jsx'
-import AirdropSignup from './airdrop/AirdropSignup.jsx'
+import Signup from './airdrop/AirdropSignup.jsx'
 import Login from './airdrop/AirdropSignin.jsx'
 import FriendsSection from './airdrop/FriendsSection.jsx'
 import AirdropOtpVerify from './airdrop/AirdropOtpVerify.jsx'
@@ -21,7 +21,7 @@ const App = () => {
             </Route>
             {/* Waitlist routes */}
             {/* <Route path="/waitlist" element={<InvitePage />} /> */}
-            <Route path="/waitlist/signup" element={<AirdropSignup />} />
+            <Route path="/waitlist/signup" element={<Signup />} />
             <Route path="/waitlist/leaderboard" element={<Leaderboard />} />
             <Route path="/waitlist/signin" element={<Login />} />
             <Route path="/waitlist/dashboard" element={<FriendsSection />} />
